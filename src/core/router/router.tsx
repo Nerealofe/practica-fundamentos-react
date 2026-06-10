@@ -1,8 +1,8 @@
 import { Navigate, Routes, Route } from "react-router-dom";
-import { LoginPage } from "../../features/auth/login-page.tsx";
-import { ProductsPage } from "../../features/products/products-page.tsx";
-import { ProductPage } from "../../features/products/product-page.tsx";
-import { NewProductPage } from "../../features/products/new-product-page.tsx";
+import { LoginPage } from "../../features/auth/login-page";
+import { ProductsPage } from "../../features/products/products-page";
+import { ProductPage } from "../../features/products/product-page";
+import { NewProductPage } from "../../features/products/new-product-page";
 
 export function Router() {
   return (
