@@ -6,7 +6,8 @@ type ProtectedRouteProps = {
 };
 
 export function ProtectedRoute({ children }: ProtectedRouteProps) {
-  const token = localStorage.getItem("token");
+  const token =
+    localStorage.getItem("token") ?? sessionStorage.getItem("token");
 
   if (!token) {
     return <Navigate to="/login" />;

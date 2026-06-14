@@ -8,6 +8,8 @@ export function ProductPage() {
   const navigate = useNavigate();
 
   const [product, setProduct] = useState<Product | null>(null);
+  const [showConfirm, setShowConfirm] = useState(false);
+
   useEffect(() => {
     if (!params.id) return;
 
@@ -33,7 +35,14 @@ export function ProductPage() {
       <p>Tags: {product?.tags.join(",")}</p>
       <p>{product?.description}</p>
 
-      <button onClick={handleDelete}>Borrar producto</button>
+      <button onClick={() => setShowConfirm(true)}>Borrar producto</button>
+      {showConfirm && (
+        <div>
+          <p>¿Seguro que quieres borrar este producto?</p>
+          <button onClick={handleDelete}>Confirmar</button>
+          <button onClick={() => setShowConfirm(false)}>Cancelar</button>
+        </div>
+      )}
     </>
   );
 }

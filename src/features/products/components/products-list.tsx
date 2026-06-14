@@ -2,6 +2,7 @@ import { ProductCard } from "./product-card";
 import type { Product } from "../product";
 import { useEffect, useState } from "react";
 import { getProducts } from "../services/products-api";
+import { NavLink } from "react-router-dom";
 
 export function ProductsList() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -26,6 +27,14 @@ export function ProductsList() {
   return (
     <>
       <h3>Lista de productos </h3>
+      {filteredProducts.length === 0 && (
+        <>
+          {" "}
+          <p>No hay productos que mostrar</p>
+          <NavLink to="/products/new">Crear un producto</NavLink>{" "}
+        </>
+      )}
+
       {filteredProducts.map((product) => (
         <ProductCard key={product.id} product={product} />
       ))}

@@ -19,7 +19,8 @@ export async function getProductById(id: string): Promise<Product> {
 }
 
 export async function createProduct(product: Product): Promise<Product> {
-  const token = localStorage.getItem("token");
+  const token =
+    localStorage.getItem("token") ?? sessionStorage.getItem("token");
 
   const response = await fetch(`${API_URL}/api/products`, {
     method: "POST",
@@ -37,7 +38,8 @@ export async function createProduct(product: Product): Promise<Product> {
 }
 
 export async function deleteProduct(id: number): Promise<void> {
-  const token = localStorage.getItem("token");
+  const token =
+    localStorage.getItem("token") ?? sessionStorage.getItem("token");
 
   const response = await fetch(`${API_URL}/api/products/${id}`, {
     method: "DELETE",

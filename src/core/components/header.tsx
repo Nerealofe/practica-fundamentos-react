@@ -6,6 +6,7 @@ export function Header() {
 
   function handleLogout() {
     localStorage.removeItem("token");
+    sessionStorage.removeItem("token");
     navigate("/login");
   }
 
