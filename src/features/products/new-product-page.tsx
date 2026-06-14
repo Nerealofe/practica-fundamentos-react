@@ -8,6 +8,8 @@ export function NewProductPage() {
   const [price, setPrice] = useState(0);
   const [description, setDescription] = useState("");
   const [isOnSale, setIsOnSale] = useState(false);
+  const [tags, setTags] = useState<string[]>([]);
+
   const navigate = useNavigate();
 
   async function handleSubmit(event: SubmitEvent) {
@@ -16,12 +18,20 @@ export function NewProductPage() {
       id: 0,
       name,
       price,
-      tags: [],
+      tags,
       image: "",
       isOnSale,
       description,
     });
     navigate(`/products/${createdProduct.id}`);
+  }
+
+  function handleTagChange(tag: string) {
+    if (tags.includes(tag)) {
+      setTags(tags.filter((currentTag) => currentTag !== tag));
+    } else {
+      setTags([...tags, tag]);
+    }
   }
 
   return (
@@ -52,6 +62,20 @@ export function NewProductPage() {
         checked={isOnSale}
         onChange={(event) => setIsOnSale(event.target.checked)}
       />
+      <fieldset>
+        <legend>Tags</legend>
+
+        {["motor", "work", "lifestyle", "mobile", "motorcycle"].map((tag) => (
+          <label key={tag}>
+            <input
+              type="checkbox"
+              checked={tags.includes(tag)}
+              onChange={() => handleTagChange(tag)}
+            />
+            {tag}
+          </label>
+        ))}
+      </fieldset>
 
       <button type="submit">Crear Producto</button>
     </form>

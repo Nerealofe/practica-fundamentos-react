@@ -27,17 +27,6 @@ export function ProductsList() {
   return (
     <>
       <h3>Lista de productos </h3>
-      {filteredProducts.length === 0 && (
-        <>
-          {" "}
-          <p>No hay productos que mostrar</p>
-          <NavLink to="/products/new">Crear un producto</NavLink>{" "}
-        </>
-      )}
-
-      {filteredProducts.map((product) => (
-        <ProductCard key={product.id} product={product} />
-      ))}
       <label htmlFor="nameFilter">Filtrar por nombre</label>
       <input
         id="nameFilter"
@@ -51,6 +40,17 @@ export function ProductsList() {
         value={maxPrice}
         onChange={(event) => setMaxPrice(event.target.value)}
       />
+      {filteredProducts.length === 0 && (
+        <>
+          {" "}
+          <p>No hay productos que mostrar</p>
+          <NavLink to="/products/new">Crear un producto</NavLink>{" "}
+        </>
+      )}
+
+      {filteredProducts.map((product) => (
+        <ProductCard key={product.id} product={product} />
+      ))}
     </>
   );
 }
