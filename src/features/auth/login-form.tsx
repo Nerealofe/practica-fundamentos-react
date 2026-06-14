@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { login } from "./services/auth-api.ts";
+import { useNavigate } from "react-router-dom";
 
 export function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
   async function handleSubmit(event: React.SubmitEvent<HTMLFormElement>) {
     event.preventDefault();
     const response = await login({
@@ -11,6 +13,7 @@ export function LoginForm() {
       password,
     });
     localStorage.setItem("token", response.accessToken);
+    navigate("/products");
 
     console.log("Sesion iniciada");
   }

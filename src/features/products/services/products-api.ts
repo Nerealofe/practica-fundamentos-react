@@ -17,3 +17,21 @@ export async function getProductById(id: string): Promise<Product> {
   }
   return response.json();
 }
+
+export async function createProduct(product: Product): Promise<Product> {
+  const token = localStorage.getItem("token");
+
+  const response = await fetch(`${API_URL}/api/products`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify(product),
+  });
+
+  if (!response.ok) {
+    throw new Error("Error creando producto");
+  }
+  return response.json();
+}
