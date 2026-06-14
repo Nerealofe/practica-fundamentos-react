@@ -35,3 +35,18 @@ export async function createProduct(product: Product): Promise<Product> {
   }
   return response.json();
 }
+
+export async function deleteProduct(id: number): Promise<void> {
+  const token = localStorage.getItem("token");
+
+  const response = await fetch(`${API_URL}/api/products/${id}`, {
+    method: "DELETE",
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+
+  if (!response.ok) {
+    throw new Error("Error eliminando producto");
+  }
+}

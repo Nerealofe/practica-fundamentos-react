@@ -1,4 +1,5 @@
 import { useState } from "react";
+import type { SubmitEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import { createProduct } from "./services/products-api";
 
@@ -9,7 +10,7 @@ export function NewProductPage() {
   const [isOnSale, setIsOnSale] = useState(false);
   const navigate = useNavigate();
 
-  async function handleSubmit(event) {
+  async function handleSubmit(event: SubmitEvent) {
     event.preventDefault();
     const createdProduct = await createProduct({
       id: 0,

@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import type { SubmitEvent } from "react";
 import { login } from "./services/auth-api.ts";
 import { useNavigate } from "react-router-dom";
 
@@ -6,7 +7,7 @@ export function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
-  async function handleSubmit(event: React.SubmitEvent<HTMLFormElement>) {
+  async function handleSubmit(event: SubmitEvent) {
     event.preventDefault();
     const response = await login({
       username: email,
