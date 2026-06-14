@@ -1,12 +1,18 @@
 import React, { useState } from "react";
+import { login } from "./services/auth-api.ts";
 
 export function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  function handleSubmit(event: React.SubmitEvent<HTMLFormElement>) {
+  async function handleSubmit(event: React.SubmitEvent<HTMLFormElement>) {
     event.preventDefault();
-    console.log(email);
-    console.log(password);
+    const response = await login({
+      username: email,
+      password,
+    });
+    localStorage.setItem("token", response.accessToken);
+
+    console.log("Sesion iniciada");
   }
   return (
     <form onSubmit={handleSubmit}>
