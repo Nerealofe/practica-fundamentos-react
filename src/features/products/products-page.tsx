@@ -1,3 +1,10 @@
+import { ProductsList } from "./components/products-list";
+
 export function ProductsPage() {
-  return <h1>Pagina de Productos</h1>;
+  return (
+    <>
+      <h2>Pagina de Productos</h2>
+      <ProductsList />
+    </>
+  );
 }
