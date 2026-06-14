@@ -3,15 +3,37 @@ import { LoginPage } from "../../features/auth/login-page";
 import { ProductsPage } from "../../features/products/products-page";
 import { ProductPage } from "../../features/products/product-page";
 import { NewProductPage } from "../../features/products/new-product-page";
+import { ProtectedRoute } from "./protected-route";
 
 export function Router() {
   return (
     <Routes>
       <Route path="/" element={<Navigate to="/products" />} />
       <Route path="/login" element={<LoginPage />} />
-      <Route path="/products" element={<ProductsPage />} />
-      <Route path="/products/new" element={<NewProductPage />} />
-      <Route path="/products/:id" element={<ProductPage />} />
+      <Route
+        path="/products"
+        element={
+          <ProtectedRoute>
+            <ProductsPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/products/new"
+        element={
+          <ProtectedRoute>
+            <NewProductPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/products/:id"
+        element={
+          <ProtectedRoute>
+            <ProductPage />
+          </ProtectedRoute>
+        }
+      />
     </Routes>
   );
 }
