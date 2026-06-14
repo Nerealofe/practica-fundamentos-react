@@ -1,0 +1,147 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "iPhone 13",
+      "price": 450,
+      "tags": [
+        "mobile",
+        "lifestyle"
+      ],
+      "image": "",
+      "isOnSale": true,
+      "description": "iPhone 13 de 128GB en buen estado."
+    },
+    {
+      "id": 2,
+      "name": "Samsung Galaxy S22",
+      "price": 390,
+      "tags": [
+        "mobile"
+      ],
+      "image": "",
+      "isOnSale": false,
+      "description": "Samsung Galaxy S22 con batería en perfecto estado."
+    },
+    {
+      "id": 3,
+      "name": "MacBook Air M1",
+      "price": 750,
+      "tags": [
+        "work",
+        "lifestyle"
+      ],
+      "image": "",
+      "isOnSale": true,
+      "description": "Portátil ligero ideal para estudio y trabajo."
+    },
+    {
+      "id": 4,
+      "name": "Casco Moto AGV",
+      "price": 180,
+      "tags": [
+        "motor",
+        "motorcycle"
+      ],
+      "image": "",
+      "isOnSale": false,
+      "description": "Casco integral homologado."
+    },
+    {
+      "id": 5,
+      "name": "PlayStation 5",
+      "price": 420,
+      "tags": [
+        "lifestyle"
+      ],
+      "image": "",
+      "isOnSale": true,
+      "description": "Consola PS5 edición estándar."
+    },
+    {
+      "id": 6,
+      "name": "Monitor LG 27",
+      "price": 190,
+      "tags": [
+        "work"
+      ],
+      "image": "",
+      "isOnSale": false,
+      "description": "Monitor Full HD de 27 pulgadas."
+    },
+    {
+      "id": 7,
+      "name": "Bicicleta MTB",
+      "price": 300,
+      "tags": [
+        "lifestyle"
+      ],
+      "image": "",
+      "isOnSale": true,
+      "description": "Bicicleta de montaña con suspensión delantera."
+    },
+    {
+      "id": 8,
+      "name": "iPad Air",
+      "price": 350,
+      "tags": [
+        "mobile",
+        "work"
+      ],
+      "image": "",
+      "isOnSale": false,
+      "description": "Tablet perfecta para productividad."
+    },
+    {
+      "id": 9,
+      "name": "Chaqueta Motera",
+      "price": 95,
+      "tags": [
+        "motorcycle",
+        "lifestyle"
+      ],
+      "image": "",
+      "isOnSale": true,
+      "description": "Chaqueta de protección para moto."
+    },
+    {
+      "id": 10,
+      "name": "Teclado Mecánico",
+      "price": 70,
+      "tags": [
+        "work"
+      ],
+      "image": "",
+      "isOnSale": false,
+      "description": "Teclado mecánico con iluminación RGB."
+    },
+    {
+      "id": 11,
+      "name": "Monitor Dell 24\"",
+      "price": 140,
+      "tags": [
+        "work",
+        "lifestyle"
+      ],
+      "image": "",
+      "isOnSale": false,
+      "description": "Monitor Full HD de 24 pulgadas con conexión HDMI y DisplayPort. Ideal para teletrabajo y programación.",
+      "userId": 1,
+      "updatedAt": "2026-06-14T20:46:30.357Z"
+    }
+  ],
+  "tags": [
+    "motor",
+    "work",
+    "lifestyle",
+    "mobile",
+    "motorcycle"
+  ],
+  "users": [
+    {
+      "username": "maria@gmail.com",
+      "password": "$2b$10$dpXNKJNT6yaJCFJ1AlBBQODAHgzGfULhv6AhwRz2fXnUrga9VlIea",
+      "id": 1
+    }
+  ]
+}
