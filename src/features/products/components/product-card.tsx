@@ -6,9 +6,9 @@ type ProductCardProps = {
 };
 export function ProductCard({ product }: ProductCardProps) {
   return (
-    <article>
-      <h3>
-        <Link to={`/products/${product.id}`}> {product.name} </Link>
+    <article className="product-card">
+      <h3 className="product-title">
+        <Link to={`/products/${product.id}`}>{product.name}</Link>
       </h3>
       <p>{product.price} €</p>
       <p>{product.isOnSale ? "En oferta" : "No está en oferta"}</p>

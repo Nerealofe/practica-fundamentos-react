@@ -11,12 +11,16 @@ export function Header() {
   }
 
   return (
-    <>
+    <header>
       <h1>Nerepop</h1>
-      <NavLink to="/products">Productos</NavLink>
-      <NavLink to="/products/new">Nuevo Producto</NavLink>
-      <NavLink to="/login">Iniciar sesión</NavLink>
+
+      <nav>
+        <NavLink to="/products">Productos</NavLink>
+        <NavLink to="/products/new">Nuevo Producto</NavLink>
+        <NavLink to="/login">Iniciar sesión</NavLink>
+      </nav>
+
       <button onClick={handleLogout}>Cerrar Sesión</button>
-    </>
+    </header>
   );
 }
