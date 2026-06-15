@@ -35,3 +35,4 @@ Iniciar el proyecto:
 ```bash
 npm run dev
 ```
+Adjunto db.json con productos, usuario y contraseña. 
